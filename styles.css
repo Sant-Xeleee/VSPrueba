@@ -159,6 +159,16 @@ a {
         background-color: var(--first-color-lighten);
     }
 
+    .nav__toggle.active .nav__toggle-menu {
+        opacity: 0;
+        transform: scale(0.8); /* Shrink and hide the hamburger icon */
+    }
+    
+    .nav__toggle.active .nav__toggle-close {
+        opacity: 1;
+        transform: scale(1); /* Show and scale the close icon */
+    }
+
 .layout-content-container {
     position: relative;
     z-index: 1; /* Lower z-index to ensure it's behind the menu */
