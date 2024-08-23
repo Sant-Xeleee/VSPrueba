@@ -55,6 +55,7 @@ a {
 }
 
 /*=============== HEADER ===============*/
+/*=============== HEADER ===============*/
 .header {
     position: fixed;
     top: 0;
@@ -65,8 +66,6 @@ a {
     z-index: var(--z-fixed);
 }
 
-
-/* Default styles for the navigation */
 .nav {
     height: var(--header-height);
 }
@@ -79,27 +78,25 @@ a {
 }
 
 .nav__logo {
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    column-gap: 0.25rem;
+    column-gap: 0.5rem;
     color: var(--title-color);
     font-weight: var(--font-semi-bold);
-    transition: color 0.3s;
+    text-decoration: none;
 }
 
-    .nav__logo i {
-        font-size: 1.25rem;
-    }
-
-    .nav__logo:hover {
-        color: var(--first-color);
-    }
+.nav__logo-img {
+    width: 50px;
+    height: auto;
+    object-fit: contain;
+}
 
 .nav__toggle {
     position: relative;
     width: 32px;
     height: 32px;
-    z-index: calc(var(--z-fixed) + 1); /* Ensure toggle button is above the menu */
+    z-index: 1000;
     cursor: pointer;
 }
 
@@ -107,43 +104,40 @@ a {
     font-size: 1.25rem;
     color: var(--title-color);
     position: absolute;
+    inset: 0;
     display: grid;
     place-items: center;
-    inset: 0;
-    cursor: pointer;
     transition: opacity 0.1s, transform 0.4s;
+}
+
+.nav__toggle-menu {
+    opacity: 1;
+    transform: scale(1);
 }
 
 .nav__toggle-close {
     opacity: 0;
+    transform: scale(0.8);
 }
 
 .nav__menu {
-    display: none; /* Keep the default hidden state */
-    position: fixed; /* Position it at a fixed location */
-    top: var(--header-height); /* Position it just below the header */
+    display: none;
+    position: fixed;
+    top: var(--header-height);
     left: 0;
-    width: 100%; /* Make it full width */
-    background-color: var(--body-color); /* Ensure it has a background */
-    z-index: var(--z-fixed); /* Higher z-index to be on top */
+    width: 100%;
+    background-color: var(--body-color);
+    z-index: var(--z-fixed);
     transition: opacity 0.3s, visibility 0.3s;
     opacity: 0;
     visibility: hidden;
 }
 
     .nav__menu.active {
-        display: block; /* Show the menu when active */
-        opacity: 1; /* Fade in effect */
+        display: block;
+        opacity: 1;
         visibility: visible;
     }
-
-.nav__toggle-menu {
-    display: inline;
-}
-
-.nav__toggle-close {
-    display: none;
-}
 
 .nav__link {
     color: var(--title-color);
@@ -165,8 +159,9 @@ a {
 }
 
 .nav__toggle.active .nav__toggle-close {
-    opacity: 1;
-    transform: scale(1); /* Show and scale the close icon */
+    opacity: 1; /* Show and scale the close icon */
+    transform: scale(1.5); /* Show and scale the close icon */
+    top: 7px;
 }
 
 .layout-content-container {
@@ -543,6 +538,10 @@ a {
         visibility: visible;
     }
 
+    .nav__logo-img {
+        width: 90px; /* Tamaño mayor para dispositivos grandes */
+    }
+
     .nav__list {
         display: flex; /* Ensure list items are displayed in a row */
         column-gap: 3rem;
@@ -766,6 +765,10 @@ a {
         padding: 1rem; /* Add padding for aesthetics */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
         z-index: var(--z-fixed); /* Ensure it's on top of other elements */
+    }
+
+    .nav__logo-img {
+        width: 55px;
     }
 
     /* Ensure the menu items display properly */
