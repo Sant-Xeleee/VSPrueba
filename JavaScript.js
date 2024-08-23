@@ -19,3 +19,18 @@ document.addEventListener("DOMContentLoaded", function () {
             navToggle.classList.toggle('active');
         });
     });
+
+    document.getElementById('send').addEventListener('click', function (event) {
+        event.preventDefault(); // Evita que el formulario se envíe normalmente
+    
+        // Obtener los valores del formulario
+        let name = document.getElementById('name').value;
+        let email = document.getElementById('email').value;
+        let asunto = document.getElementById('asunto').value;
+    
+        // Crear el enlace de WhatsApp
+        let whatsappLink = `https://api.whatsapp.com/send?phone=+529992790193&text=Nombre: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0AMensaje: ${encodeURIComponent(asunto)}`;
+    
+        // Abrir WhatsApp
+        window.open(whatsappLink, '_blank');
+    });
