@@ -10,6 +10,11 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault(); // Evita el comportamiento por defecto del enlace
         window.location.href = "jiujitsu.aspx"; // Redirige a la página de Jiu-Jitsu
     });
+
+    document.getElementById('btn').addEventListener('click', function(){
+        document.getElementById('form').scrollIntoView({behavior: "smooth"})
+    });
+
     /*=============== SHOW MENU ===============*/
         const navToggle = document.getElementById('nav-toggle');
         const navMenu = document.getElementById('nav-menu');
