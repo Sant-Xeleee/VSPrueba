@@ -1,5 +1,6 @@
 /*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
 /*=============== VARIABLES CSS ===============*/
 :root {
     --header-height: 3.5rem;
@@ -65,6 +66,7 @@ a {
     z-index: var(--z-fixed);
 }
 
+/*=============== NAVBAR ===============*/
 .nav {
     height: var(--header-height);
 }
@@ -99,7 +101,8 @@ a {
     cursor: pointer;
 }
 
-.nav__toggle-menu, .nav__toggle-close {
+.nav__toggle-menu,
+.nav__toggle-close {
     font-size: 1.25rem;
     color: var(--title-color);
     position: absolute;
@@ -132,11 +135,11 @@ a {
     visibility: hidden;
 }
 
-    .nav__menu.active {
-        display: block;
-        opacity: 1;
-        visibility: visible;
-    }
+.nav__menu.active {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
 
 .nav__link {
     color: var(--title-color);
@@ -148,24 +151,28 @@ a {
     transition: background-color 0.3s;
 }
 
-    .nav__link:hover {
-        background-color: var(--first-color-lighten);
-    }
+.nav__link:hover {
+    background-color: var(--first-color-lighten);
+}
 
 .nav__toggle.active .nav__toggle-menu {
     opacity: 0;
-    transform: scale(0.8); /* Shrink and hide the hamburger icon */
+    transform: scale(0.8);
+    /* Shrink and hide the hamburger icon */
 }
 
 .nav__toggle.active .nav__toggle-close {
-    opacity: 1; /* Show and scale the close icon */
-    transform: scale(1.5); /* Show and scale the close icon */
+    opacity: 1;
+    /* Show and scale the close icon */
+    transform: scale(1.5);
+    /* Show and scale the close icon */
     top: 7px;
 }
 
 .layout-content-container {
     position: relative;
-    z-index: 1; /* Lower z-index to ensure it's behind the menu */
+    z-index: 1;
+    /* Lower z-index to ensure it's behind the menu */
 }
 
 /* Show menu */
@@ -205,18 +212,18 @@ a {
     margin-top: var(--header-height)
 }
 
-    .background-section h1 {
-        color: white;
-        font-size: 2em;
-        font-weight: 900;
-        margin: 0;
-    }
+.background-section h1 {
+    color: white;
+    font-size: 2em;
+    font-weight: 900;
+    margin: 0;
+}
 
-    .background-section h2 {
-        color: white;
-        font-size: 1em;
-        font-weight: 400;
-    }
+.background-section h2 {
+    color: white;
+    font-size: 1em;
+    font-weight: 400;
+}
 
 .cta-button {
     background-color: var(--first-color);
@@ -230,121 +237,205 @@ a {
     transition: all .3s ease;
 }
 
-    .cta-button:hover {
-        background-color: var(--first-color-lighten);
-    }
+.cta-button:hover {
+    background-color: var(--first-color-lighten);
+}
 
 /* General Container */
 .container {
-    padding: 10px; /* Reduce el padding para pantallas pequeñas */
+    padding: 10px;
+    /* Reduce el padding para pantallas pequeñas */
 }
 
 /* Layout adjustments */
 .layout-content-container {
-    padding: 15px; /* Ajustar el padding interno */
-    gap: 20px; /* Menor separación entre secciones */
+    padding: 15px;
+    /* Ajustar el padding interno */
+    gap: 20px;
+    /* Menor separación entre secciones */
 }
 
 /* Values Grid */
 .values-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Una columna para que cada tarjeta ocupe todo el ancho */
-    gap: 20px; /* Menor espacio entre las tarjetas */
+    grid-template-columns: 1fr;
+    /* Una columna para que cada tarjeta ocupe todo el ancho */
+    gap: 20px;
+    /* Menor espacio entre las tarjetas */
 }
 
 /* Value Item Styles */
 .value-item {
     text-align: center;
-    padding: 15px; /* Reducir el padding */
-    border-radius: 10px; /* Mantener un borde redondeado suave */
-    background: #fff; /* Fondo blanco para las tarjetas */
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    padding: 15px;
+    /* Reducir el padding */
+    border-radius: 10px;
+    /* Mantener un borde redondeado suave */
+    background: #fff;
+    /* Fondo blanco para las tarjetas */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra ligera */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-    .value-item:hover {
-        transform: translateY(-5px); /* Reducir el desplazamiento en hover */
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra ligera en hover */
-    }
+.value-item:hover {
+    transform: translateY(-5px);
+    /* Reducir el desplazamiento en hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Sombra ligera en hover */
+}
 
 /* Icon */
 .icon {
-    width: 40px; /* Reducir tamaño del ícono */
+    width: 40px;
+    /* Reducir tamaño del ícono */
     height: 40px;
-    margin: 0 auto 15px; /* Reducir margen inferior */
+    margin: 0 auto 15px;
+    /* Reducir margen inferior */
     background-size: contain;
     background-position: center;
 }
 
 /* Value Title */
 .value-item h2 {
-    font-size: 1.2em; /* Reducir tamaño de fuente */
+    font-size: 1.2em;
+    /* Reducir tamaño de fuente */
     color: var(--title-color);
-    margin-bottom: 8px; /* Ajustar margen inferior */
+    margin-bottom: 8px;
+    /* Ajustar margen inferior */
 }
 
 /* Value Description */
 .value-item p {
-    font-size: 0.95em; /* Reducir tamaño de fuente para el texto descriptivo */
+    font-size: 0.95em;
+    /* Reducir tamaño de fuente para el texto descriptivo */
     color: var(--text-color);
 }
+
+/*=============== MODAL ===============*/
+.modalDialog {
+    position: fixed;
+    inset: 0;
+    /* top, right, bottom, y left a 0 */
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity: 0;
+    transition: opacity .3s ease-in;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalDialog:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modalDialog>div {
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    margin: 5% auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    max-height: 800vh;
+    ;
+}
+
+.modalDialog img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.close:hover {
+    color: #06c;
+}
+
 
 /* Instructors Grid */
 .instructors {
     display: grid;
-    grid-template-columns: 1fr; /* Una columna para que cada tarjeta de instructor ocupe todo el ancho */
-    gap: 20px; /* Menor espacio entre las tarjetas */
+    grid-template-columns: 1fr;
+    /* Una columna para que cada tarjeta de instructor ocupe todo el ancho */
+    gap: 20px;
+    /* Menor espacio entre las tarjetas */
 }
 
 .instructor {
     display: flex;
     align-items: center;
-    gap: 15px; /* Reducir espacio entre imagen e información */
-    padding: 15px; /* Reducir padding */
-    border-radius: 10px; /* Mantener un borde redondeado suave */
+    gap: 15px;
+    /* Reducir espacio entre imagen e información */
+    padding: 15px;
+    border-radius: 10px;
+    /* Mantener un borde redondeado suave */
     background: #fff;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Transiciones añadidas para el color de fondo */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra ligera */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    /* Transiciones añadidas para el color de fondo */
 }
 
-    /* Efecto Hover en la tarjeta */
-    .instructor:hover {
-        transform: scale(1.05); /* Aumentar ligeramente el tamaño en hover */
-        background-color: #f0f0f0; /* Cambiar el color de fondo en hover */
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada en hover */
-    }
+/* Efecto Hover en la tarjeta */
+.instructor:hover {
+    transform: scale(1.05);
+    background-color: #f0f0f0;
+    /* Cambiar el color de fondo en hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    /* Sombra más pronunciada en hover */
+}
 
 /* Instructor Image */
 .instructor-image {
-    width: 60px; /* Reducir tamaño de la imagen */
+    width: 60px;
+    /* Reducir tamaño de la imagen */
     height: 60px;
     border-radius: 50%;
     background-size: cover;
     background-position: center;
-    transition: transform 0.3s ease; /* Transición para el efecto de imagen */
+    transition: transform 0.3s ease;
+    /* Transición para el efecto de imagen */
 }
 
 /* Efecto Hover en la imagen */
 .instructor:hover .instructor-image {
-    transform: scale(1.1); /* Aumentar ligeramente el tamaño de la imagen en hover */
+    transform: scale(1.1);
+    /* Aumentar ligeramente el tamaño de la imagen en hover */
 }
 
 /* Instructor Info */
 .instructor-info .name {
-    font-size: 1.2em; /* Reducir tamaño de fuente */
+    font-size: 1.2em;
     font-weight: var(--font-semi-bold);
     color: var(--title-color);
-    margin-bottom: 8px; /* Ajustar margen inferior */
+    margin-bottom: 8px;
+    /* Ajustar margen inferior */
 }
 
 .instructor-info .role {
-    font-size: 1em; /* Ajustar tamaño de fuente */
+    font-size: 1em;
+    /* Ajustar tamaño de fuente */
     color: var(--text-color);
 }
 
 
 
-/* MAPA */
+/*=============== MAPA Y CONTACTO===============*/
 .contact-section {
     display: flex;
     flex-direction: column;
@@ -356,7 +447,8 @@ a {
 
 .map-container {
     width: 100%;
-    height: 200px; /* Altura ajustada para móviles */
+    height: 200px;
+    /* Altura ajustada para móviles */
 }
 
 .contact-form {
@@ -367,43 +459,43 @@ a {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-    .contact-form h2 {
-        color: #007bff;
-        margin-bottom: 10px;
-    }
+.contact-form h2 {
+    color: #007bff;
+    margin-bottom: 10px;
+}
 
-    .contact-form p {
-        color: #666;
-        margin-bottom: 20px;
-    }
+.contact-form p {
+    color: #666;
+    margin-bottom: 20px;
+}
 
-    .contact-form form {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
-    .contact-form input,
-    .contact-form textarea {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-    }
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
 
-    .contact-form button {
-        padding: 10px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
+.contact-form button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
-        .contact-form button:hover {
-            background-color: #0056b3;
-        }
+.contact-form button:hover {
+    background-color: #0056b3;
+}
 
 /*=============== FOOTER ===============*/
 .footer {
@@ -446,15 +538,15 @@ a {
     gap: 5px;
 }
 
-    .footer__list a {
-        color: var(--title-color);
-        font-weight: var(--font-medium);
-        transition: color 0.3s;
-    }
+.footer__list a {
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+    transition: color 0.3s;
+}
 
-        .footer__list a:hover {
-            color: var(--first-color);
-        }
+.footer__list a:hover {
+    color: var(--first-color);
+}
 
 .footer__social {
     display: flex;
@@ -482,9 +574,9 @@ a {
     color: var(--first-color);
 }
 
-    .social-icon:hover {
-        transform: scale(1.1);
-    }
+.social-icon:hover {
+    transform: scale(1.1);
+}
 
 .footer__bottom {
     text-align: center;
@@ -498,6 +590,7 @@ a {
 /*=============== BREAKPOINTS ===============*/
 /* For large devices */
 @media screen and (min-width: 1118px) {
+
     /* Nav */
     .nav {
         height: calc(var(--header-height) + 2rem);
@@ -518,7 +611,8 @@ a {
         color: var(--title-color);
         font-weight: var(--font-semi-bold);
         transition: color 0.3s;
-        margin-right: auto; /* Empuja el logo y el nombre del establecimiento hacia la izquierda */
+        margin-right: auto;
+        /* Empuja el logo y el nombre del establecimiento hacia la izquierda */
         font-size: 1.55em
     }
 
@@ -526,25 +620,22 @@ a {
         display: flex;
         column-gap: 2rem;
         height: 100%;
-        margin-left: auto; /* Empuja los elementos del menú hacia la derecha */
+        margin-left: auto;
+        /* Empuja los elementos del menú hacia la derecha */
     }
 
     .nav__menu {
-        display: flex; /* Ensure the menu is displayed for large screens */
-        position: static; /* Reset position from absolute */
-        background-color: transparent; /* Remove background if needed */
+        display: flex;
+        /* Ensure the menu is displayed for large screens */
+        position: static;
+        /* Reset position from absolute */
         opacity: 1;
         visibility: visible;
     }
 
     .nav__logo-img {
-        width: 90px; /* Tamaño mayor para dispositivos grandes */
-    }
-
-    .nav__list {
-        display: flex; /* Ensure list items are displayed in a row */
-        column-gap: 3rem;
-        height: 100%;
+        width: 90px;
+        /* Tamaño mayor para dispositivos grandes */
     }
 
     .nav li {
@@ -552,39 +643,47 @@ a {
     }
 
     .nav__link {
-        padding: 0; /* Adjust padding for large screens */
+        padding: 0;
+        /* Adjust padding for large screens */
     }
 
-        .nav__link:hover {
-            color: var(--first-color);
-            background-color: initial;
-        }
+    .nav__link:hover {
+        color: var(--first-color);
+        background-color: initial;
+    }
 
     .background-section {
         display: flex;
         flex-direction: column;
-        min-height: calc(100vh - var(--header-height)); /* Ajusta la altura mínima al 100% de la pantalla menos la altura del header */
+        min-height: calc(100vh - var(--header-height));
+        /* Ajusta la altura mínima al 100% de la pantalla menos la altura del header */
         border-radius: 10px;
-        padding: 60px 40px; /* Incrementa el padding para dispositivos grandes */
+        padding: 60px 40px;
+        /* Incrementa el padding para dispositivos grandes */
         justify-content: flex-end;
         align-items: flex-start;
         gap: 30px;
-        margin-top: var(--header-height); /* Añade margen para que no se superponga con el navbar */
+        margin-top: var(--header-height);
+        /* Añade margen para que no se superponga con el navbar */
     }
 
-        .background-section h1 {
-            font-size: 3em; /* Aumenta el tamaño de la fuente para dispositivos grandes */
-            color: white;
-            margin-bottom: 0.5em;
-        }
+    .background-section h1 {
+        font-size: 3em;
+        /* Aumenta el tamaño de la fuente para dispositivos grandes */
+        color: white;
+        margin-bottom: 0.5em;
+    }
 
-        .background-section h2 {
-            font-size: 1.5em; /* Aumenta el tamaño de la fuente para dispositivos grandes */
-        }
+    .background-section h2 {
+        font-size: 1.5em;
+        /* Aumenta el tamaño de la fuente para dispositivos grandes */
+    }
 
     .cta-button {
-        font-size: 1.5em; /* Aumenta el tamaño del botón */
-        padding: 15px 30px; /* Incrementa el padding del botón */
+        font-size: 1.5em;
+        /* Aumenta el tamaño del botón */
+        padding: 15px 30px;
+        /* Incrementa el padding del botón */
         background-color: var(--first-color);
         color: var(--body-color);
         border-radius: 10px;
@@ -594,148 +693,169 @@ a {
     }
 
     .container {
-        padding: 0 40px; /* Increase padding for larger screens */
+        padding: 0 40px;
+        /* Increase padding for larger screens */
     }
 
     .layout-content-container {
-        padding: 40px 30px; /* Increase padding inside the layout container */
-        gap: 40px; /* Increase the gap between sections for better spacing */
+        padding: 40px 30px;
+        /* Increase padding inside the layout container */
+        gap: 40px;
+        /* Increase the gap between sections for better spacing */
     }
 
     /* Adjusting grid layout for values */
     .values-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /* Three columns for values on large screens */
-        gap: 30px; /* Add more space between the grid items */
+        grid-template-columns: repeat(3, 1fr);
+        /* Three columns for values on large screens */
+        gap: 30px;
+        /* Add more space between the grid items */
     }
 
     .value-item {
-        text-align: center; /* Center-align the content inside each item */
-        padding: 20px; /* Increase padding for better spacing */
-        border-radius: 10px; /* Optional: add a subtle border-radius */
+        text-align: center;
+        /* Center-align the content inside each item */
+        padding: 20px;
+        /* Increase padding for better spacing */
+        border-radius: 10px;
+        /* Optional: add a subtle border-radius */
         transition: transform 0.3s ease;
     }
 
-        .value-item:hover {
-            transform: translateY(-10px); /* Lift the item slightly more on hover */
-        }
+    .value-item:hover {
+        transform: translateY(-10px);
+        /* Lift the item slightly more on hover */
+    }
 
     .icon {
-        width: 100px; /* Increase size adjustments for the icon */
+        width: 100px;
+        /* Increase size adjustments for the icon */
         height: 100px;
-        margin: 0 auto 20px; /* Center the icon and add more margin */
-        background-size: contain; /* Ensure the icon scales properly */
+        margin: 0 auto 20px;
+        /* Center the icon and add more margin */
+        background-size: contain;
+        /* Ensure the icon scales properly */
     }
 
     .value-item h2 {
-        font-size: 1.5em; /* Increase font size for better readability */
+        font-size: 1.5em;
+        /* Increase font size for better readability */
         color: var(--title-color);
     }
 
     /* Instructors section adjustments */
     .instructors {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /* Three columns for instructors on large screens */
-        gap: 30px; /* Add more space between the instructor cards */
+        grid-template-columns: repeat(3, 1fr);
+        /* Three columns for instructors on large screens */
+        gap: 30px;
+        /* Add more space between the instructor cards */
     }
 
     .instructor {
         display: flex;
         align-items: center;
-        gap: 20px; /* Increase space between image and info */
+        gap: 20px;
+        /* Increase space between image and info */
         padding: 20px;
-        border-radius: 10px; /* Optional: add a subtle border-radius */
+        border-radius: 10px;
+        /* Optional: add a subtle border-radius */
         transition: box-shadow 0.3s ease;
     }
 
-        .instructor:hover {
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Add a stronger shadow on hover */
-        }
+    .instructor:hover {
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        /* Add a stronger shadow on hover */
+    }
 
     .instructor-image {
-        width: 100px; /* Increase size adjustments for the instructor image */
+        width: 100px;
+        /* Increase size adjustments for the instructor image */
         height: 100px;
-        border-radius: 50%; /* Circular image */
-        background-size: cover; /* Ensure the image covers the entire area */
+        border-radius: 50%;
+        /* Circular image */
+        background-size: cover;
+        /* Ensure the image covers the entire area */
     }
 
     .instructor-info {
-        flex: 1; /* Allow info to take up remaining space */
+        flex: 1;
+        /* Allow info to take up remaining space */
     }
 
-        .instructor-info .name {
-            font-size: 1.5em; /* Increase font size for the name */
-            font-weight: var(--font-semi-bold);
-            color: var(--title-color);
-            margin-bottom: 10px; /* Increase space between name and role */
-        }
+    .instructor-info .name {
+        font-size: 1.5em;
+        /* Increase font size for the name */
+        font-weight: var(--font-semi-bold);
+        color: var(--title-color);
+        margin-bottom: 10px;
+        /* Increase space between name and role */
+    }
 
-        .instructor-info .role {
-            font-size: 1.25em; /* Increase font size for the role */
-            color: var(--text-color);
-        }
+    .instructor-info .role {
+        font-size: 1.25em;
+        /* Increase font size for the role */
+        color: var(--text-color);
+    }
 
     .contact-section {
         display: flex;
         flex-wrap: wrap;
         gap: 20px;
-        padding: 40px;
     }
 
     .map-container {
-        flex: 1 1 45%; /* Ajusta el mapa para ocupar el 45% del contenedor */
-        min-width: 300px; /* Asegura un tamaño mínimo */
-        height: 300px; /* Ajusta la altura según sea necesario */
+        flex: 1 1 45%;
+        /* Ajusta el mapa para ocupar el 45% del contenedor */
+        min-width: 300px;
+        /* Asegura un tamaño mínimo */
+        height: 300px;
+        /* Ajusta la altura según sea necesario */
     }
 
     .contact-section {
         flex-direction: row;
         justify-content: space-between;
-        padding: 40px 60px; /* Más padding para pantallas grandes */
+        padding: 40px 60px;
+        /* Más padding para pantallas grandes */
     }
 
     .map-container {
-        flex: 1 1 45%; /* El mapa ocupa el 45% del contenedor */
-        height: 400px; /* Altura mayor para pantallas grandes */
+        flex: 1 1 45%;
+        /* El mapa ocupa el 45% del contenedor */
+        height: 400px;
+        /* Altura mayor para pantallas grandes */
     }
 
     .contact-form {
         flex: 1 1 45%;
     }
 
-    .footer{
-        background-color:#fff;
+    .footer {
+        background-color: #fff;
     }
 
-    @media screen and (min-width: 1152px) {
-        .container {
-            margin-inline: auto;
-        }
+    .footer__bottom {
+        text-align: center;
+        margin-right:60px;
+        margin-top: 20px;
     }
 }
-/* Styles when the menu is active */
-.nav__menu.active {
-    display: block;
-}
-
-.nav__toggle.active .nav__toggle-menu {
-    display: none;
-}
-
-.nav__toggle.active .nav__toggle-close {
-    display: inline;
-}
-
 
 
 /* For tablets devices */
 @media (min-width: 768px) and (max-width:1118px) {
+
     /* Nav */
     .nav {
-        height: 56px /*calc(var(--header-height) + 2rem)*/;
+        height: 56px
+            /*calc(var(--header-height) + 2rem)*/
+        ;
         display: flex;
         justify-content: space-between;
-        position: relative; /* Important to control stacking */
+        position: relative;
+        /* Important to control stacking */
     }
 
     .nav__data {
@@ -743,11 +863,13 @@ a {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+        width: 100%;
+        /* Asegura que el contenedor ocupe todo el ancho */
     }
 
     .nav__toggle {
-        margin-left: auto; /* Mueve el icono al extremo derecho */
+        margin-left: auto;
+        /* Mueve el icono al extremo derecho */
         position: relative;
         width: 32px;
         height: 32px;
@@ -755,15 +877,22 @@ a {
 
     /* Hide the full menu initially */
     .nav__menu {
-        display: none; /* Hide the menu by default */
-        position: absolute; /* Position it correctly */
-        /* top: calc(var(--header-height) + 2rem);*/ /* Adjust based on header height */
+        display: none;
+        /* Hide the menu by default */
+        position: absolute;
+        /* Position it correctly */
+        /* top: calc(var(--header-height) + 2rem);*/
+        /* Adjust based on header height */
         left: 0;
         right: 0;
-        background-color: var(--body-color); /* Ensure it has a background */
-        padding: 1rem; /* Add padding for aesthetics */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
-        z-index: var(--z-fixed); /* Ensure it's on top of other elements */
+        background-color: var(--body-color);
+        /* Ensure it has a background */
+        padding: 1rem;
+        /* Add padding for aesthetics */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        /* Optional: Add a shadow */
+        z-index: var(--z-fixed);
+        /* Ensure it's on top of other elements */
     }
 
     .nav__logo-img {
@@ -772,17 +901,20 @@ a {
 
     /* Ensure the menu items display properly */
     .nav__list {
-        flex-direction: column; /* Display items vertically */
+        flex-direction: column;
+        /* Display items vertically */
         gap: 1rem;
     }
 
     .nav li {
-        display: block; /* Ensure each item takes a full row */
+        display: block;
+        /* Ensure each item takes a full row */
     }
 
     /* Active state for the menu */
     .nav__menu.active {
-        display: block; /* Show the menu when active */
+        display: block;
+        /* Show the menu when active */
     }
 
     /* Toggle icon behavior */
@@ -795,38 +927,45 @@ a {
     }
 
     .nav__toggle.active .nav__toggle-menu {
-        display: none; /* Hide the open menu icon when active */
+        display: none;
+        /* Hide the open menu icon when active */
     }
 
     .nav__toggle.active .nav__toggle-close {
-        display: block; /* Show the close menu icon when active */
+        display: block;
+        /* Show the close menu icon when active */
     }
 
     .background-section {
         display: flex;
         flex-direction: column;
         min-height: 400px;
-        width: 100%; /* Make the section take up the full width of its container */
-        max-height: 400px; /* Set a maximum height for the section */
+        width: 100%;
+        /* Make the section take up the full width of its container */
+        max-height: 400px;
+        /* Set a maximum height for the section */
         border-radius: 10px;
-        padding: 20px 15px; /* Adjust padding as needed */
+        padding: 20px 15px;
+        /* Adjust padding as needed */
         justify-content: flex-end;
         align-items: flex-start;
         gap: 20px;
     }
 
-        .background-section h1 {
-            color: white;
-            font-size: 1.75em; /* Adjust font size */
-            font-weight: 900;
-            margin: 0;
-        }
+    .background-section h1 {
+        color: white;
+        font-size: 1.75em;
+        /* Adjust font size */
+        font-weight: 900;
+        margin: 0;
+    }
 
-        .background-section h2 {
-            color: white;
-            font-size: 0.9em; /* Adjust font size */
-            font-weight: 400;
-        }
+    .background-section h2 {
+        color: white;
+        font-size: 0.9em;
+        /* Adjust font size */
+        font-weight: 400;
+    }
 
     .cta-button {
         background-color: var(--first-color);
@@ -840,92 +979,117 @@ a {
         transition: all .3s ease;
     }
 
-        .cta-button:hover {
-            background-color: var(--first-color-lighten);
-        }
+    .cta-button:hover {
+        background-color: var(--first-color-lighten);
+    }
 
     /* Container adjustments for tablet view */
     .container {
-        padding: 0 20px; /* Add some padding to the container */
+        padding: 0 20px;
+        /* Add some padding to the container */
     }
 
     .layout-content-container {
-        padding: 20px 15px; /* Adjust padding inside the layout container */
-        gap: 30px; /* Increase the gap between sections */
+        padding: 20px 15px;
+        /* Adjust padding inside the layout container */
+        gap: 30px;
+        /* Increase the gap between sections */
     }
 
     /* Adjusting grid layout for values */
     .values-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /* Three columns for values on tablet */
-        gap: 20px; /* Add space between the grid items */
+        grid-template-columns: repeat(3, 1fr);
+        /* Three columns for values on tablet */
+        gap: 20px;
+        /* Add space between the grid items */
     }
 
     .value-item {
-        text-align: center; /* Center-align the content inside each item */
-        padding: 10px; /* Add some padding for spacing */
-        border-radius: 8px; /* Optional: add a subtle border-radius */
+        text-align: center;
+        /* Center-align the content inside each item */
+        padding: 10px;
+        /* Add some padding for spacing */
+        border-radius: 8px;
+        /* Optional: add a subtle border-radius */
         transition: transform 0.3s ease;
     }
 
-        .value-item:hover {
-            transform: translateY(-5px); /* Lift the item slightly on hover */
-        }
+    .value-item:hover {
+        transform: translateY(-5px);
+        /* Lift the item slightly on hover */
+    }
 
     .icon {
-        width: 80px; /* Size adjustments for the icon */
+        width: 80px;
+        /* Size adjustments for the icon */
         height: 80px;
-        margin: 0 auto 10px; /* Center the icon and add some margin */
-        background-size: contain; /* Ensure the icon scales properly */
+        margin: 0 auto 10px;
+        /* Center the icon and add some margin */
+        background-size: contain;
+        /* Ensure the icon scales properly */
     }
 
     .value-item h2 {
-        font-size: 1.25em; /* Adjust font size for better readability */
+        font-size: 1.25em;
+        /* Adjust font size for better readability */
         color: var(--title-color);
     }
 
     /* Instructors section adjustments */
     .instructors {
         display: grid;
-        grid-template-columns: 1fr 1fr; /* Two columns for instructors */
-        gap: 20px; /* Add space between the instructor cards */
+        grid-template-columns: 1fr 1fr;
+        /* Two columns for instructors */
+        gap: 20px;
+        /* Add space between the instructor cards */
     }
 
     .instructor {
         display: flex;
         align-items: center;
-        gap: 15px; /* Space between image and info */
+        gap: 15px;
+        /* Space between image and info */
         padding: 10px;
-        border-radius: 8px; /* Optional: add a subtle border-radius */
+        border-radius: 8px;
+        /* Optional: add a subtle border-radius */
         transition: box-shadow 0.3s ease;
     }
 
-        .instructor:hover {
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
-        }
+    .instructor:hover {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        /* Add shadow on hover */
+    }
 
     .instructor-image {
-        width: 80px; /* Size adjustments for the instructor image */
+        width: 80px;
+        /* Size adjustments for the instructor image */
         height: 80px;
-        border-radius: 50%; /* Circular image */
-        background-size: cover; /* Ensure the image covers the entire area */
+        border-radius: 50%;
+        /* Circular image */
+        background-size: cover;
+        /* Ensure the image covers the entire area */
     }
 
     .instructor-info {
-        flex: 1; /* Allow info to take up remaining space */
+        flex: 1;
+        /* Allow info to take up remaining space */
     }
 
-        .instructor-info .name {
-            font-size: 1.25em; /* Adjust font size for the name */
-            font-weight: var(--font-semi-bold);
-            color: var(--title-color);
-            margin-bottom: 5px; /* Space between name and role */
-        }
+    .instructor-info .name {
+        font-size: 1.25em;
+        /* Adjust font size for the name */
+        font-weight: var(--font-semi-bold);
+        color: var(--title-color);
+        margin-bottom: 5px;
+        /* Space between name and role */
+    }
 
-        .instructor-info .role {
-            font-size: 1em; /* Adjust font size for the role */
-            color: var(--text-color);
-        }
+    .instructor-info .role {
+        font-size: 1em;
+        /* Adjust font size for the role */
+        color: var(--text-color);
+    }
 
     .contact-section {
         flex-direction: row;
@@ -935,14 +1099,15 @@ a {
 
     .map-container {
         flex: 1 1 48%;
-        height: 300px; /* Altura para tablets */
+        height: 300px;
+        /* Altura para tablets */
     }
 
     .contact-form {
         flex: 1 1 48%;
     }
 
-    .footer{
-        background-color:#fff;
+    .footer {
+        background-color: #fff;
     }
 }

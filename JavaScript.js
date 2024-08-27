@@ -1,3 +1,4 @@
+/*=============== GO TO ANOTHER PAGE IF IS CLICKED ===============*/
 document.addEventListener("DOMContentLoaded", function () {
     var inicio = document.getElementById("inicio");
     inicio.addEventListener("click", function (event) {
@@ -11,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "jiujitsu.aspx"; // Redirige a la página de Jiu-Jitsu
     });
 
+    /*=============== GO DOWN  ===============*/
     document.getElementById('btn').addEventListener('click', function () {
         document.getElementById('form').scrollIntoView({ behavior: "smooth" })
     });
@@ -24,7 +26,22 @@ document.addEventListener("DOMContentLoaded", function () {
         navToggle.classList.toggle('active');
     });
 });
+/*=============== MODAL APPEARS IF IS CLICKED ===============*/
+document.querySelectorAll('.instructor .name').forEach(item => {
+    item.addEventListener('click', event => {
+        const title = event.target.getAttribute('data-title');
+        const role = event.target.getAttribute('data-role');
+        const description = event.target.getAttribute('data-description');
+        const image = event.target.getAttribute('data-image');
 
+        document.getElementById('modal-title').innerText = title;
+        document.getElementById('modal-role').innerText = role;
+        document.getElementById('modal-description').innerText = description;
+        document.getElementById('modal-image').setAttribute('src', image);
+    });
+});
+
+/*=============== CONTACT WHEN THE BUTTON IS CLICKED ===============*/
 document.getElementById('send').addEventListener('click', function (event) {
     event.preventDefault(); // Evita que el formulario se envíe normalmente
 
