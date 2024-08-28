@@ -637,6 +637,7 @@ a {
         width: 90px;
         /* Tamaño mayor para dispositivos grandes */
     }
+    
 
     .nav li {
         display: flex;
@@ -803,6 +804,7 @@ a {
         display: flex;
         flex-wrap: wrap;
         gap: 20px;
+        padding:40px;
     }
 
     .map-container {
@@ -836,11 +838,22 @@ a {
         background-color: #fff;
     }
 
-    .footer__bottom {
-        text-align: center;
-        margin-right:60px;
-        margin-top: 20px;
+    @media screen and (min-width: 1152px) {
+        .container {
+            margin-inline: auto;
+        }
     }
+}
+.nav__menu.active {
+    display: block;
+}
+
+.nav__toggle.active .nav__toggle-menu {
+    display: none;
+}
+
+.nav__toggle.active .nav__toggle-close {
+    display: inline;
 }
 
 
