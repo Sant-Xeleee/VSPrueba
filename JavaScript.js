@@ -36,10 +36,11 @@ document.querySelectorAll('.instructor .name').forEach(item => {
 
         document.getElementById('modal-title').innerText = title;
         document.getElementById('modal-role').innerText = role;
-        document.getElementById('modal-description').innerText = description;
+        document.getElementById('modal-description').innerHTML = description;
         document.getElementById('modal-image').setAttribute('src', image);
     });
 });
+
 
 /*=============== CONTACT WHEN THE BUTTON IS CLICKED ===============*/
 document.getElementById('send').addEventListener('click', function (event) {
