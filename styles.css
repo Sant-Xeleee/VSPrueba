@@ -119,7 +119,11 @@ a {
 
 .nav__toggle-close {
     opacity: 0;
-    transform: scale(0.8);
+    transform: scale(0.6);
+    top: 10px;
+    right: 35px;
+    position: absolute;
+    cursor: pointer;
 }
 
 .nav__menu {
@@ -255,6 +259,13 @@ a {
     /* Menor separación entre secciones */
 }
 
+.subtitle {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
 /* Values Grid */
 .values-grid {
     display: grid;
@@ -267,21 +278,23 @@ a {
 /* Value Item Styles */
 .value-item {
     text-align: center;
-    padding: 15px;
+    padding: 20px;
     /* Reducir el padding */
-    border-radius: 10px;
+    border-radius: 15px;
     /* Mantener un borde redondeado suave */
     background: #fff;
     /* Fondo blanco para las tarjetas */
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.2);
     /* Sombra ligera */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #f7f7f7;
+
 }
 
 .value-item:hover {
-    transform: translateY(-5px);
+    transform: scale(1.05);
     /* Reducir el desplazamiento en hover */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
     /* Sombra ligera en hover */
 }
 
@@ -294,6 +307,20 @@ a {
     /* Reducir margen inferior */
     background-size: contain;
     background-position: center;
+    transition: transform 0.3s ease;
+}
+
+.value-item .icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 10px;
+    background-size: contain;
+    transition: transform 0.3s ease;
+}
+
+.value-item:hover .icon {
+    transform: scale(1.2);
+    /* Increase the icon size on hover */
 }
 
 /* Value Title */
@@ -312,6 +339,16 @@ a {
     color: var(--text-color);
 }
 
+/* Oculta la información adicional en la sección de valores */
+.value-item h3 {
+    display: none;
+  }
+  
+  /* Muestra la información adicional cuando se pasa el mouse sobre la sección de valores */
+  .value-item:hover h3 {
+    display: block;
+  }
+  
 /*=============== MODAL ===============*/
 .modalDialog {
     position: fixed;
@@ -637,7 +674,7 @@ a {
         width: 90px;
         /* Tamaño mayor para dispositivos grandes */
     }
-    
+
 
     .nav li {
         display: flex;
@@ -804,7 +841,7 @@ a {
         display: flex;
         flex-wrap: wrap;
         gap: 20px;
-        padding:40px;
+        padding: 40px;
     }
 
     .map-container {
@@ -844,6 +881,7 @@ a {
         }
     }
 }
+
 .nav__menu.active {
     display: block;
 }
@@ -932,20 +970,31 @@ a {
 
     /* Toggle icon behavior */
     .nav__toggle-menu {
+        top: 6px;
         display: block;
     }
 
     .nav__toggle-close {
+        right: 10px;
         display: none;
+        position: absolute;
+        transform: scale(0.6);
     }
 
     .nav__toggle.active .nav__toggle-menu {
         display: none;
+        opacity: 0;
+        transform: scale(0.8);
         /* Hide the open menu icon when active */
     }
 
     .nav__toggle.active .nav__toggle-close {
         display: block;
+        opacity: 1;
+        /* Show and scale the close icon */
+        transform: scale(1.5);
+        /* Show and scale the close icon */
+        top: 7px;
         /* Show the close menu icon when active */
     }
 
