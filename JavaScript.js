@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 /*=============== MODAL APPEARS IF IS CLICKED ===============*/
-document.querySelectorAll('.instructor .name').forEach(item => {
+document.querySelectorAll('.detail .name').forEach(item => {
     item.addEventListener('click', event => {
         const title = event.target.getAttribute('data-title');
         const role = event.target.getAttribute('data-role');
@@ -38,6 +38,9 @@ document.querySelectorAll('.instructor .name').forEach(item => {
         document.getElementById('modal-role').innerText = role;
         document.getElementById('modal-description').innerHTML = description;
         document.getElementById('modal-image').setAttribute('src', image);
+
+        // Show the modal
+        document.getElementById('modal').style.display = 'block';
     });
 });
 
