@@ -12,6 +12,13 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "jiujitsu.aspx"; // Redirige a la página de Jiu-Jitsu
     });
 
+    document.querySelectorAll('.card_overlay').forEach(function(element) {
+        element.addEventListener('touchend', function() {
+            // Aquí puedes agregar el código para manejar el evento de toque
+            element.classList.toggle('active'); // Ejemplo de cambio de clase para la superposición
+        });
+    });
+    
     /*=============== GO DOWN  ===============*/
     document.getElementById('btn').addEventListener('click', function () {
         document.getElementById('form').scrollIntoView({ behavior: "smooth" })
