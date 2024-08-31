@@ -248,17 +248,15 @@ a {
 /* General Container */
 .container {
     padding: 10px;
-    /* Reduce el padding para pantallas pequeñas */
 }
 
 /* Layout adjustments */
 .layout-content-container {
     padding: 15px;
-    /* Ajustar el padding interno */
     gap: 20px;
-    /* Menor separación entre secciones */
 }
 
+/* Subtitle */
 .subtitle {
     text-align: center;
     font-size: 1.5rem;
@@ -270,88 +268,141 @@ a {
 .values-grid {
     display: grid;
     grid-template-columns: 1fr;
-    /* Una columna para que cada tarjeta ocupe todo el ancho */
     gap: 20px;
-    /* Menor espacio entre las tarjetas */
 }
 
 /* Value Item Styles */
 .value-item {
     text-align: center;
     padding: 20px;
-    /* Reducir el padding */
     border-radius: 15px;
-    /* Mantener un borde redondeado suave */
     background: #fff;
-    /* Fondo blanco para las tarjetas */
     box-shadow: 0 0px 20px rgba(0, 0, 0, 0.2);
-    /* Sombra ligera */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background-color: #f7f7f7;
-
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    overflow: hidden;
 }
 
+/* Hover Effect for Value Item */
 .value-item:hover {
     transform: scale(1.05);
-    /* Reducir el desplazamiento en hover */
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-    /* Sombra ligera en hover */
 }
 
 /* Icon */
 .icon {
-    width: 40px;
-    /* Reducir tamaño del ícono */
-    height: 40px;
-    margin: 0 auto 15px;
-    /* Reducir margen inferior */
+    width: 80px; /* Adjusted size */
+    height: 80px; /* Adjusted size */
+    margin-bottom: 10px;
     background-size: contain;
     background-position: center;
     transition: transform 0.3s ease;
 }
 
-.value-item .icon {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 10px;
-    background-size: contain;
-    transition: transform 0.3s ease;
-}
-
+/* Hover Effect for Icon */
 .value-item:hover .icon {
     transform: scale(1.2);
-    /* Increase the icon size on hover */
 }
 
-/* Value Title */
-.value-item h2 {
+/* Card Title */
+.card_title {
     font-size: 1.2em;
-    /* Reducir tamaño de fuente */
     color: var(--title-color);
-    margin-bottom: 8px;
-    /* Ajustar margen inferior */
+    margin: 10px 0; /* Adjusted margin to position the title correctly */
+    z-index: 2;
+    transition: opacity 0.5s ease; /* Transition for opacity */
 }
 
-/* Value Description */
-.value-item p {
-    font-size: 0.95em;
-    /* Reducir tamaño de fuente para el texto descriptivo */
-    color: var(--text-color);
+/* Card Overlay */
+.card_overlay {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+    cursor: pointer;
+    z-index: 2; /* Increased z-index to be on top of the content */
 }
 
-/* Oculta la información adicional en la sección de valores */
-.value-item h3 {
-    display: none;
-  }
+/* Overlay Text */
+.card_overlay::before {
+    content: "Read";
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+/* Overlay Hover Effect */
+.card_overlay:hover,
+.card_overlay:focus {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: none;
+    border-radius: 0;
+    opacity: 0.9;
+}
+
+/* Hide Text on Hover */
+.card_overlay:hover::before,
+.card_overlay:focus::before {
+    content: none;
+}
+
+/* Display Card Content on Hover */
+.value-item:hover .card__content {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.2s 0.3s; /* Delay for a smooth effect */
+}
+
+/* Card Content */
+.card__content {
+    z-index: 1;
+    padding: 20px;
+    line-height: 1.4;
+    opacity: 0;
+    visibility: hidden;
+    box-sizing: border-box;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.8); /* Light background for readability */
+    border-radius: 10px; /* Rounded corners for better appearance */
+    text-align: center; /* Center text */
+    width: 80%; /* Adjust width */
+    max-width: 300px; /* Max width to keep it within reasonable bounds */
+}
+
+/* Card Content Heading */
+.card__content h2 {
+    margin: 0;
+    margin-bottom: 16px;
+}
+
+
   
-  /* Muestra la información adicional cuando se pasa el mouse sobre la sección de valores */
-  .value-item:hover h3 {
-    display: block;
-  }
   
   .card {
     position: relative;
-    width: 300px;
+    width: 275px;
     height: 400px;
     background: #fff;
     border-radius: 10px;
@@ -442,6 +493,7 @@ a {
     background: #03a9f4;
     color: #fff;
   }
+  
 
 /*=============== MODAL ===============*/
 .modalDialog {
@@ -825,16 +877,18 @@ a {
     }
 
     .container {
-        padding: 0 40px;
-        /* Increase padding for larger screens */
-    }
-
-    .layout-content-container {
-        padding: 40px 30px;
-        /* Increase padding inside the layout container */
+        max-width: 1120px;
+        margin-inline: 1.5rem;
+        padding: 0 2%; /* Change the padding to a percentage value */
+      }
+      
+      .layout-content-container {
+        position: relative;
+        z-index: 1;
+        /* Lower z-index to ensure it's behind the menu */
+        padding: 40px 3%; /* Change the padding to a percentage value */
         gap: 40px;
-        /* Increase the gap between sections for better spacing */
-    }
+      }
 
     /* Adjusting grid layout for values */
     .values-grid {
@@ -969,6 +1023,61 @@ a {
         background-color: #fff;
     }
 
+      .value-item {
+      text-align: center;
+      padding: 20px;
+      border-radius: 15px;
+      background: #fff;
+      box-shadow: 0 0px 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background-color: #f7f7f7;
+      max-width: 310px; /* Add a max-width property */
+    }
+    
+        .card {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+            
+        
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 20;
+          width: 50%;
+          height: 100%;
+          background-color: rgba(#ffffff, 0.1);
+          pointer-events: none;
+        }
+      }
+        .card__frame {
+        position: absolute;
+        margin-right:30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-image: linear-gradient(45deg, #3503ad, #f7308c);
+      max-width: 270px;
+        }
+    
+        .card__picture {
+        margin-bottom: 12px;
+        filter: invert(1);
+        
+        
+        img {
+          display: block;
+          max-width: 100%;
+          height: auto;
+        }
+      }
+
     @media screen and (min-width: 1152px) {
         .container {
             margin-inline: auto;
@@ -994,9 +1103,7 @@ a {
 
     /* Nav */
     .nav {
-        height: 56px
-            /*calc(var(--header-height) + 2rem)*/
-        ;
+        height: 56px/*calc(var(--header-height) + 2rem)*/;
         display: flex;
         justify-content: space-between;
         position: relative;
@@ -1141,7 +1248,7 @@ a {
 
     /* Container adjustments for tablet view */
     .container {
-        padding: 0 20px;
+        padding: 5px;
         /* Add some padding to the container */
     }
 
@@ -1199,52 +1306,30 @@ a {
         /* Two columns for instructors */
         gap: 20px;
         /* Add space between the instructor cards */
+        margin-left:100px;
     }
 
-    .instructor {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        /* Space between image and info */
-        padding: 10px;
-        border-radius: 8px;
-        /* Optional: add a subtle border-radius */
-        transition: box-shadow 0.3s ease;
+    .values-grid {
+        grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+        gap: 20px; /* Espacio entre tarjetas */
     }
-
-    .instructor:hover {
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        /* Add shadow on hover */
+    .card {
+        height: 350px; /* Ajustar la altura */
     }
-
-    .instructor-image {
-        width: 80px;
-        /* Size adjustments for the instructor image */
-        height: 80px;
-        border-radius: 50%;
-        /* Circular image */
-        background-size: cover;
-        /* Ensure the image covers the entire area */
+    .card__overlay {
+        bottom: 15px;
+        right: 15px;
+        width: 48px;
+        height: 48px;
     }
-
-    .instructor-info {
-        flex: 1;
-        /* Allow info to take up remaining space */
+    .card__content {
+        padding: 20px;
     }
-
-    .instructor-info .name {
-        font-size: 1.25em;
-        /* Adjust font size for the name */
-        font-weight: var(--font-semi-bold);
-        color: var(--title-color);
-        margin-bottom: 5px;
-        /* Space between name and role */
+    .card__title {
+        font-size: 1.2em;
     }
-
-    .instructor-info .role {
-        font-size: 1em;
-        /* Adjust font size for the role */
-        color: var(--text-color);
+    .card__content p {
+        font-size: 0.95em;
     }
 
     .contact-section {
