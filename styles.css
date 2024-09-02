@@ -297,8 +297,8 @@ a {
 
 /* Icon */
 .icon {
-    width: 80px; /* Adjusted size */
-    height: 80px; /* Adjusted size */
+    width: 100px; /* Adjusted size */
+    height: 100px; /* Adjusted size */
     margin-bottom: 10px;
     background-size: contain;
     background-position: center;
@@ -322,25 +322,24 @@ a {
 /* Card Overlay */
 .card_overlay {
     position: absolute;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
+    bottom: 10px;
+    right: 15px;
+    width: 60px;
+    height: 45px;
+    display:flex;
     align-items: center;
     justify-content: center;
-    width: 52px;
-    height: 52px;
     background-color: #ffffff;
     border-radius: 50%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: 0.5s;
     cursor: pointer;
-    z-index: 2; /* Increased z-index to be on top of the content */
+    z-index: 2;/* Increased z-index to be on top of the content */
 }
 
 /* Overlay Text */
 .card_overlay::before {
     content: "Read";
-    font-size: 12px;
+    font-size: 14px;
     text-transform: uppercase;
     font-weight: 500;
     letter-spacing: 0.02em;
@@ -368,27 +367,30 @@ a {
 .value-item:hover .card__content {
     opacity: 1;
     visibility: visible;
-    transition: opacity 0.2s 0.3s; /* Delay for a smooth effect */
+    transition: opacity 0.2s 0.3s ease-in-out;
 }
 
 /* Card Content */
 .card__content {
-    z-index: 1;
-    padding: 20px;
-    line-height: 1.4;
     opacity: 0;
     visibility: hidden;
-    box-sizing: border-box;
+    transition: opacity 0.2s ease-in-out, visibility 0s 0.2s;
     pointer-events: none;
+    z-index: 1;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(255, 255, 255, 0.8); /* Light background for readability */
-    border-radius: 10px; /* Rounded corners for better appearance */
-    text-align: center; /* Center text */
-    width: 80%; /* Adjust width */
-    max-width: 300px; /* Max width to keep it within reasonable bounds */
+    top: 30px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card_overlay:hover ~ .card__content,
+.card_overlay:focus ~ .card__content {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.2s 0.3s ease-in-out;
 }
 
 /* Card Content Heading */
@@ -557,6 +559,7 @@ a {
     /* Una columna para que cada tarjeta de instructor ocupe todo el ancho */
     gap: 20px;
     /* Menor espacio entre las tarjetas */
+    margin-left:35px;
 }
 
 .instructor {
@@ -915,19 +918,39 @@ a {
     }
 
     .icon {
-        width: 100px;
-        /* Increase size adjustments for the icon */
-        height: 100px;
-        margin: 0 auto 20px;
-        /* Center the icon and add more margin */
-        background-size: contain;
-        /* Ensure the icon scales properly */
+        width: 100px; /* Tamaño ajustado */
+        height: 100px; /* Tamaño ajustado */
     }
-
-    .value-item h2 {
-        font-size: 1.5em;
-        /* Increase font size for better readability */
-        color: var(--title-color);
+    
+    .card_overlay {
+        position: absolute;  
+        bottom: 8px;  
+        right: 10px; 
+        display: flex;
+        align-items: center;
+        justify-content: center;  
+        width: 52px;
+        height: 52px;
+        background-color: #ffffff;  
+        border-radius: 50%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        transition: 0.5s;
+        cursor: pointer;
+  
+        z-index: 2;   
+    }
+    
+    .card_overlay::before {
+        font-size: 14px;   
+    }
+    
+    .card__content {
+        top: 32px;
+        left: 10px;   
+        right: 0; 
+        bottom: 0;
+        transform: none;   
+        padding: 20px;   
     }
 
     /* Instructors section adjustments */
