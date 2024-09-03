@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault(); // Evita el comportamiento por defecto del enlace
         window.location.href = "jiujitsu.aspx"; // Redirige a la página de Jiu-Jitsu
     });
-
+    /*=============== IOs JS  ===============*/
     document.querySelectorAll('.card_overlay').forEach(function(element) {
         element.addEventListener('touchend', function() {
             // Aquí puedes agregar el código para manejar el evento de toque
@@ -67,3 +67,4 @@ document.getElementById('send').addEventListener('click', function (event) {
     // Abrir WhatsApp
     window.open(whatsappLink, '_blank');
 });
+
