@@ -641,6 +641,26 @@ a {
     /* Altura ajustada para móviles */
 }
 
+.form-group {
+    margin-bottom: 10px;
+      width:350px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
 .contact-form {
     max-width: 500px;
     margin: 40px auto;
@@ -656,12 +676,14 @@ a {
     font-size: 24px;
     font-weight: bold;
     color: #333;
+    text-align: center;
   }
   
   .contact-form p {
     margin-bottom: 20px;
     font-size: 16px;
     color: #666;
+    text-align: center;
   }
   
   .contact-form form {
@@ -702,6 +724,7 @@ a {
   .contact-form button[type="submit"]:hover {
     background-color: #3e8e41;
   }
+  
 
 /*=============== GALLERY ===============*/
 /* Make the carousel section full-width */
@@ -1092,6 +1115,11 @@ a {
         /* Altura mayor para pantallas grandes */
     }
 
+    .form-group {
+        margin-bottom: 10px;
+          width:450px;
+      }
+
     .contact-form {
         margin-top: 20px;
         width:100%;
@@ -1191,7 +1219,7 @@ a {
     position: relative;
     width: 275px;
     height: 350px;
-        right:32px;
+    right:32px;
     background: #fff;
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.1);
@@ -1199,6 +1227,11 @@ a {
     backdrop-filter: blur(15px);
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
 }
+
+.form-group {
+    margin-bottom: 10px;
+      width:300px;
+  }
       
 }
 
